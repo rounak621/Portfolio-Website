@@ -88,18 +88,6 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-
-            {/* Action Buttons */}
-            <div className="flex gap-3 mt-auto">
-              <button className="flex items-center gap-2 px-3 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-smooth text-sm">
-                <Github className="w-4 h-4" />
-                Code
-              </button>
-              <button className="flex items-center gap-2 px-3 py-2 bg-secondary/30 text-secondary-foreground rounded-lg hover:bg-secondary/50 transition-smooth text-sm">
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </button>
-            </div>
           </div>
         ))}
       </div>

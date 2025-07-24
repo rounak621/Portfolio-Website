@@ -49,14 +49,18 @@ const Footer = () => {
             
             <div className="flex gap-4 mt-6">
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/rounak-choudhary-366b272a8/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-secondary/30 p-3 rounded-lg hover:bg-secondary/50 transition-smooth group"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth" />
               </a>
               <a 
-                href="#" 
+                href="https://github.com/rounak621" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-secondary/30 p-3 rounded-lg hover:bg-secondary/50 transition-smooth group"
                 aria-label="GitHub"
               >

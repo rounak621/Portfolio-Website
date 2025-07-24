@@ -1,8 +1,19 @@
 import { Download, Mail, Cloud, Code, Database, Settings } from 'lucide-react';
+import heroBackground from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Beautiful Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-tech-darker to-background opacity-90"></div>
+        <img 
+          src={heroBackground} 
+          alt="Tech Background" 
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/50"></div>
+      </div>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-20 floating-animation">

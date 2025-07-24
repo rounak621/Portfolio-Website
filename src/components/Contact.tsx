@@ -85,13 +85,17 @@ const Contact = () => {
               <h4 className="font-semibold mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/rounak-choudhary-366b272a8/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-secondary/30 p-3 rounded-lg hover:bg-secondary/50 transition-smooth group"
                 >
                   <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-smooth" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://github.com/rounak621" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-secondary/30 p-3 rounded-lg hover:bg-secondary/50 transition-smooth group"
                 >
                   <Github className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-smooth" />
