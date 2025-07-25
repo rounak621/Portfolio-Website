@@ -46,11 +46,18 @@ const Hero = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="hero-button flex items-center gap-2 pulse-glow">
+          <a 
+            href="/resume.pdf" 
+            download="Rounak_Choudhary_Resume.pdf"
+            className="hero-button flex items-center gap-2 pulse-glow"
+          >
             <Download className="w-5 h-5" />
             Download Resume
-          </button>
-          <button className="hero-button-outline flex items-center gap-2">
+          </a>
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="hero-button-outline flex items-center gap-2"
+          >
             <Mail className="w-5 h-5" />
             Let's Connect
           </button>

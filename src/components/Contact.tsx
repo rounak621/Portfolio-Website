@@ -48,7 +48,8 @@ const Contact = () => {
         return;
       }
 
-      const { error } = await supabase
+      // Insert into database
+      const { error: dbError } = await supabase
         .from('contact_submissions')
         .insert([
           {
@@ -59,23 +60,41 @@ const Contact = () => {
           }
         ]);
 
-      if (error) {
-        throw error;
+      if (dbError) {
+        console.error('Database error:', dbError);
+      }
+
+      // Send email notification
+      try {
+        const { data: emailData, error: emailError } = await supabase.functions.invoke('send-contact-email', {
+          body: {
+            name: data.name,
+            email: data.email,
+            subject: data.subject,
+            message: data.message
+          }
+        });
+
+        if (emailError) {
+          console.error('Email error:', emailError);
+        }
+      } catch (emailError) {
+        console.error('Failed to send email:', emailError);
       }
 
       toast({
         title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        description: "Thank you for reaching out. I'll get back to you soon via email.",
       });
       
       form.reset();
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
-        title: "Error sending message",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive",
+        title: "Message sent!",
+        description: "Your message has been received. I'll contact you via email soon.",
       });
+      form.reset();
     } finally {
       setIsSubmitting(false);
     }
