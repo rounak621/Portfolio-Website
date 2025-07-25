@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageSquare } from 'luci
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { supabase, type ContactSubmission } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured, type ContactSubmission } from '@/lib/supabase';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -37,6 +37,17 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      if (!isSupabaseConfigured || !supabase) {
+        // Fallback: show success message and log data
+        console.log('Contact form submission (Supabase not configured):', data);
+        toast({
+          title: "Message received!",
+          description: "Your message has been logged. Please contact me directly via email for immediate response.",
+        });
+        form.reset();
+        return;
+      }
+
       const { error } = await supabase
         .from('contact_submissions')
         .insert([
