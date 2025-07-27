@@ -1,4 +1,4 @@
-import { Download, Mail, Cloud, Code, Database, Settings } from 'lucide-react';
+import { Download, Mail, Cloud, Code, Database, Settings, Server, Container, GitBranch, Zap, Monitor, Shield, Network, Terminal } from 'lucide-react';
 import heroBackground from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
@@ -36,8 +36,9 @@ const Hero = () => {
           <div className="absolute bottom-32 right-20 w-1 h-1 bg-tech-green rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
         </div>
       </div>
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Animated Background Elements - Enhanced */}
+      <div className="absolute inset-0 opacity-15">
+        {/* Original floating icons */}
         <div className="absolute top-20 left-20 floating-animation">
           <Cloud className="w-12 h-12 text-tech-blue" />
         </div>
@@ -49,6 +50,32 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-32 right-20 floating-animation" style={{ animationDelay: '0.5s' }}>
           <Settings className="w-10 h-10 text-tech-green" />
+        </div>
+        
+        {/* Additional floating DevOps/Tech icons */}
+        <div className="absolute top-60 left-1/4 floating-animation" style={{ animationDelay: '3s' }}>
+          <Server className="w-10 h-10 text-tech-blue" />
+        </div>
+        <div className="absolute top-80 right-1/4 floating-animation" style={{ animationDelay: '4s' }}>
+          <Container className="w-12 h-12 text-tech-purple" />
+        </div>
+        <div className="absolute bottom-60 left-1/3 floating-animation" style={{ animationDelay: '2.5s' }}>
+          <GitBranch className="w-8 h-8 text-tech-green" />
+        </div>
+        <div className="absolute top-1/3 left-16 floating-animation" style={{ animationDelay: '1.5s' }}>
+          <Zap className="w-9 h-9 text-tech-cyan" />
+        </div>
+        <div className="absolute bottom-1/3 right-16 floating-animation" style={{ animationDelay: '3.5s' }}>
+          <Monitor className="w-11 h-11 text-tech-blue" />
+        </div>
+        <div className="absolute top-1/2 left-8 floating-animation" style={{ animationDelay: '0.8s' }}>
+          <Shield className="w-7 h-7 text-tech-purple" />
+        </div>
+        <div className="absolute bottom-1/4 left-1/2 floating-animation" style={{ animationDelay: '4.5s' }}>
+          <Network className="w-9 h-9 text-tech-green" />
+        </div>
+        <div className="absolute top-1/4 right-8 floating-animation" style={{ animationDelay: '2.8s' }}>
+          <Terminal className="w-8 h-8 text-tech-cyan" />
         </div>
       </div>
 
@@ -100,15 +127,6 @@ const Hero = () => {
             <Mail className="w-6 h-6 relative z-10 group-hover:scale-110 transition-transform" />
             <span className="relative z-10 font-semibold">Let's Connect</span>
           </button>
-        </div>
-        
-        {/* Tech Icons Showcase */}
-        <div className="flex justify-center gap-8 mb-12 animate-[slide-up_1s_ease-out_1.2s_both] opacity-60">
-          {[Cloud, Code, Database, Settings].map((Icon, index) => (
-            <div key={index} className="group cursor-pointer">
-              <Icon className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors hover:scale-110 transform duration-300" />
-            </div>
-          ))}
         </div>
 
         {/* Scroll Indicator */}
