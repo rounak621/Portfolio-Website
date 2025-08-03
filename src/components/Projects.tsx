@@ -99,10 +99,16 @@ const Projects = () => {
           <p className="text-muted-foreground mb-6">
             I'm constantly working on new cloud and DevOps projects. Check back regularly for updates!
           </p>
-          <button className="hero-button flex items-center gap-2 mx-auto">
+          <a 
+            href="https://github.com/rounak621" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hero-button flex items-center gap-2 mx-auto"
+          >
             <Github className="w-5 h-5" />
             View All on GitHub
-          </button>
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>
